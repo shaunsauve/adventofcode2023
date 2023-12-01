@@ -16,7 +16,7 @@ def decipher_line(line: str) -> int:
 			first_digit = line[i]
 			break
 	if first_digit is None:
-		raise ValueError("No digits found in line")
+		raise ValueError(f"No digits found in line '{line}'")
 
 	for i in range(len(line) - 1, -1, -1):
 		if line[i].isdigit():

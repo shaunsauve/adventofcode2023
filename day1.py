@@ -15,14 +15,14 @@ def decipher_line(line: str) -> int:
 		if line[i].isdigit():
 			first_digit = line[i]
 			break
-	if not first_digit:
+	if first_digit is None:
 		raise ValueError("No digits found in line")
 
 	for i in range(len(line) - 1, -1, -1):
 		if line[i].isdigit():
 			last_digit = line[i]
 			break
-	if not last_digit:
+	if last_digit is None:
 		raise ValueError(f"Last digit missing in '{line}'")
 
 	return int(first_digit + last_digit)
